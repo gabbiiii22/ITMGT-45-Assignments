@@ -39,12 +39,11 @@ def shift_letter(letter, shift):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
     if letter.isupper():
-        print(chr((ord(letter)+shift-65)%26+65))
+        return(chr((ord(letter)+shift-65)%26+65))
     elif letter == " ":
-        print(" ")
+        return(" ")
     else:
-        print("Error")
-    return (letter)
+        return(str("Error"))
 
     #new input
     letter = input("What letter do you want to shift? ")
@@ -83,7 +82,7 @@ def caesar_cipher(message, shift):
             else:
                 print(" 'Error! This character is an invalid input.'",end='')
             i+=1
-        return (letter)
+        return(message)
 
     #new input
     message = input("What is your message? ")
