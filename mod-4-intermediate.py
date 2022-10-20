@@ -44,7 +44,7 @@ def shift_letter(letter, shift):
         print(" ")
     else:
         print("Error")
-    return print()
+    return (letter)
 
     #new input
     letter = input("What letter do you want to shift? ")
@@ -83,7 +83,7 @@ def caesar_cipher(message, shift):
             else:
                 print(" 'Error! This character is an invalid input.'",end='')
             i+=1
-        return print()
+        return (letter)
 
     #new input
     message = input("What is your message? ")
@@ -125,7 +125,7 @@ def shift_by_letter(letter, letter_shift):
         print(" ")
     else:
         print("Error")
-    return print()
+    return (letter)
 
     #new input
     letter = input("What letter do you want to shift? ")
@@ -177,7 +177,7 @@ def vigenere_cipher(message, key):
             else:
                 print(" 'Error! This character is an invalid input.'",end='')
             i+=1
-    return print()
+    return (letter_in_message)
     
     #new input
     message = str(input("What is your message? "))
