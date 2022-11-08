@@ -71,18 +71,16 @@ def caesar_cipher(message, shift):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
-    for i in message:
-        i = 0 
-        while i < len(message):
-            letter = message[i]
-            if letter.isupper():
-                print(chr((ord(letter)+shift-65)%26+65),end='')
-            elif letter ==" ":
-                print(" ",end='')
-            else:
-                print(" 'Error! This character is an invalid input.'",end='')
-            i+=1
-        return(message)
+    shifted_message = ""
+    for i in range(len(message)):
+        letter = message[i]
+        if letter.isupper():
+            shifted_message += (chr((ord(letter)+shift-65)%26+65))
+        elif message ==" ":
+            shifted_message = " "
+        else:
+            Shifted_message = " 'Error! This character is an invalid input.'"
+    return(shifted_message)
 
     #new input
     message = input("What is your message? ")
@@ -119,12 +117,11 @@ def shift_by_letter(letter, letter_shift):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     
     if letter.isupper():
-        print(chr((ord(letter)+ord(letter_shift)-130)%26+65))
+        return(chr((ord(letter)+ord(letter_shift)-130)%26+65))
     elif letter == " ":
-        print(" ")
+        return(" ")
     else:
-        print("Error")
-    return (letter)
+        return("Error")
 
     #new input
     letter = input("What letter do you want to shift? ")
@@ -163,20 +160,20 @@ def vigenere_cipher(message, key):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     
-    for i in (message): 
-        i=0
-        while i <= len(message):
-            key_repeated = (key * (len(message) // len(key)+1))[:len(message)]
+    shifted_message = ""
+    for i in range(len(message)): 
+        letter = message[i]
+        
+        key_repeated = (key * (len(message) // len(key)+1))[:len(message)]
 
-            letter_in_message = message[i]
-            letter_in_key = str(key_repeated[i])
+        letter_in_message = message[i]
+        letter_in_key = str(key_repeated[i])
             
-            if letter_in_message.isupper() and letter_in_key.isupper():
-                print(chr((ord(letter_in_message)+ord(letter_in_key)-130)%26+65),end='')
-            else:
-                print(" 'Error! This character is an invalid input.'",end='')
-            i+=1
-    return (letter_in_message)
+        if letter_in_message.isupper() and letter_in_key.isupper():
+            shifted_message += chr((ord(letter_in_message)+ord(letter_in_key)-130)%26+65)
+        else:
+            return(" 'Error! This character is an invalid input.'")
+    return(shifted_message)
     
     #new input
     message = str(input("What is your message? "))
