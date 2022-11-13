@@ -76,8 +76,8 @@ def caesar_cipher(message, shift):
         letter = message[i]
         if letter.isupper():
             shifted_message += (chr((ord(letter)+shift-65)%26+65))
-        elif message ==" ":
-            shifted_message = " "
+        elif letter == " ":
+            shifted_message += " "
         else:
             Shifted_message = " 'Error! This character is an invalid input.'"
     return(shifted_message)
@@ -172,7 +172,7 @@ def vigenere_cipher(message, key):
         if letter_in_message.isupper() and letter_in_key.isupper():
             shifted_message += chr((ord(letter_in_message)+ord(letter_in_key)-130)%26+65)
         else:
-            return(" 'Error! This character is an invalid input.'")
+            shifted_message += " "
     return(shifted_message)
     
     #new input
