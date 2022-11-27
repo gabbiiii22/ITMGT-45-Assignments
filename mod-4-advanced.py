@@ -141,6 +141,9 @@ def eta(first_stop, second_stop, route_map):
         elif first_stop != second_stop:
             if nums[all_first_stops.index(first_stop)] == nums[all_second_stops.index(second_stop)]:
                 return nums[all_first_stops.index(first_stop)]
+            elif first_stop < second_stop:
+                travel_time = sum(nums[all_first_stops.index(first_stop):all_second_stops.index(second_stop)+1])
+                return travel_time
             else: 
-                travel_time = nums[all_first_stops.index(first_stop)] + nums[all_second_stops.index(second_stop)]
+                travel_time = sum(nums[all_first_stops.index(first_stop):] + nums[:all_second_stops.index(second_stop)+1])
                 return travel_time
