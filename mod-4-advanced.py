@@ -81,15 +81,15 @@ def tic_tac_toe(board):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     
     for a in board:
-        if len(set(a)) == 1:
+        if len(set(a)) == 1 and a[0] != " ":
             return a[0]
     for i in zip(*board):
-        if len(set(i)) ==1:
+        if len(set(i)) ==1 and v[0] != " ":
             v = list(set(i))
             return(v[0])
-    if len(set([board[i][i] for i in range(len(board))])) == 1:
+    if len(set([board[i][i] for i in range(len(board))])) == 1 and board[0][0] != " ":
         return board[0][0]
-    elif len(set([board[i][len(board)-i-1] for i in range(len(board))])) == 1:
+    elif len(set([board[i][len(board)-i-1] for i in range(len(board))])) == 1 and board[0][len(board)-1] :
         return board[0][len(board)-1]
     else:
         return "NO WINNER"
@@ -141,7 +141,7 @@ def eta(first_stop, second_stop, route_map):
         elif first_stop != second_stop:
             if nums[all_first_stops.index(first_stop)] == nums[all_second_stops.index(second_stop)]:
                 return nums[all_first_stops.index(first_stop)]
-            elif first_stop < second_stop:
+            elif all_first_stops.index(first_stop) < all_second_stops.index(second_stop):
                 travel_time = sum(nums[all_first_stops.index(first_stop):all_second_stops.index(second_stop)+1])
                 return travel_time
             else: 
