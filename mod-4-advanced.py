@@ -89,7 +89,7 @@ def tic_tac_toe(board):
             return(v[0])
     if len(set([board[i][i] for i in range(len(board))])) == 1 and board[0][0] != " ":
         return board[0][0]
-    elif len(set([board[i][len(board)-i-1] for i in range(len(board))])) == 1 and board[0][len(board)-1] :
+    elif len(set([board[i][len(board)-i-1] for i in range(len(board))])) == 1 and board[0][len(board)-1] != " ":
         return board[0][len(board)-1]
     else:
         return "NO WINNER"
